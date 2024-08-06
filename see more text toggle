@@ -1,0 +1,19 @@
+$(document).ready(function() {
+    $('.see-more').click(function(e) {
+        e.preventDefault();
+        var parentDiv = $(this).closest('.text-toggle');
+        $(parentDiv).find('.summary').toggle();
+        $(parentDiv).find('.full-text').toggle();
+        $(this).text($(this).text() == 'See More' ? 'See Less' : 'See More');
+    });
+});
+
+
+---------------------------------
+
+
+<div id="text_toggle" class="text-toggle">
+    <span class="summary">#TEXT#</span>
+    <span class="full-text" style="display:none;">#TEXT#</span>
+    <a href="#" class="see-more">See More</a>
+</div>
